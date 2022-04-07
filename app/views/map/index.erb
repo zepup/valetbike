@@ -1,4 +1,15 @@
 <h1>Map</h1>
+<% if @stations.present? %>
+  <%= render(partial: "stations/row", collection: @stations, as: :station) %>
+<% else %>
+<div class="empty">
+  No stations found.
+</div>
+<% end %>
+
+
+
+
   <div class="map-box">
     <%# Sets map div %>
     <div id="map"></div>
