@@ -2,6 +2,9 @@
   <div class="map-box">
     <%# Sets map div %>
     <div id="map"></div>
+    <% @stations.each do |s| %>
+      L.marker(<%= raw [s.latitude, s.longitude].to_json %>).addTo(mymap);
+    <% end %>
     <%# Have to call js file with all leaflet functions after html div %>
     <%= javascript_include_tag('leaflet.js') %>
   </div>
