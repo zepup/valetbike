@@ -1,5 +1,5 @@
 class AddLongitudeToStations < ActiveRecord::Migration[6.1]
   def change
-    add_column :stations, :longitude, :integer
+    add_column :stations, :longitude, :float
   end
 end
