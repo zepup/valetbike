@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get "membership", to: "memberships#index"
   get "map", to: "map#index"
   get "register", to: "register#index"
+  get "stations", to: "stations#index"
 end
 
