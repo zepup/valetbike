@@ -13,9 +13,16 @@
   <div class="map-box">
     <%# Sets map div %>
     <div id="map"></div>
-    <% Station.all.each do |s| %>
-      L.marker(<%= raw [s.latitude, s.longitude].to_json %>).addTo(map);
-    <% end %>
+
+
+    <script type="text/javascript">
+
+      <% Station.all.each do |s| %>
+        var marker = L.marker([42.33, -72.63]).addTo(map);
+        <L.marker(<%= raw [s.latitude, s.longitude].to_json %>).addTo(map);
+      <% end %>
+    </script>
+
     <%# Have to call js file with all leaflet functions after html div %>
     <%= javascript_include_tag('leaflet.js') %>
   </div>
