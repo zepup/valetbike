@@ -64,3 +64,6 @@ gem 'dotenv-rails'
 
 #Payment API 
 gem 'stripe'
+
+#User login gems
+gem 'devise'
