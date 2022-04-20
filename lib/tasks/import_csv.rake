@@ -7,14 +7,15 @@ namespace :import_csv do
         csv_station = CSV.parse(csv_station_text, :headers => true, :encoding => "ISO-8859-1")
         csv_bike = CSV.parse(csv_bike_text, :headers => true, :encoding => "ISO-8859-1")
         csv_station.each do |row|
-            s = Station.new
-            s.identifier = row["identifier"]
-            s.name = row["name"]
-            s.address = row["address"]
-            s.total_docks = row["dock_count"]
-            s.latitude = row["latitude"]
-            s.longitude = row["longitude"]
-            puts "station added. #{s.name}"
+            s = Station.new(name: row["name"], address: row["address"], identifier: row["identifier"], total_docks: row["dock_count"])
+            #s.identifier = row["identifier"]
+            #s.name = row["name"]
+            #s.address = row["address"]
+            #s.total_docks = row["dock_count"]
+            #s.latitude = row["latitude"]
+            #s.longitude = row["longitude"]
+            s.save
+            puts "station added. #{s.name} #{s.identifier} #{s.address} #{s.total_docks} "
         end
         csv_bike.each do |row|
             b = Bike.new
