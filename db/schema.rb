@@ -14,9 +14,6 @@ ActiveRecord::Schema.define(version: 2022_04_18_184515) do
 
   create_table "bikes", charset: "utf8mb4", collation: "utf8mb4_unicode_520_ci", force: :cascade do |t|
     t.integer "identifier"
-    t.integer "charge_level"
-    t.boolean "docked"
-    t.string "current_station"
     t.integer "current_station_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

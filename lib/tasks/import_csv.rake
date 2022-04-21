@@ -12,8 +12,8 @@ namespace :import_csv do
             #s.name = row["name"]
             #s.address = row["address"]
             #s.total_docks = row["dock_count"]
-            #s.latitude = row["latitude"]
-            #s.longitude = row["longitude"]
+            s.latitude = row["latitude"]
+            s.longitude = row["longitude"]
             s.save
             puts "station added. #{s.name} #{s.identifier} #{s.address} #{s.total_docks} "
         end
@@ -21,6 +21,7 @@ namespace :import_csv do
             b = Bike.new
             b.identifier = row["identifier"]
             b.current_station_id = row["current_station_id"]
+            b.save
             puts "bike added. #{b.identifier}"
         end
     end
