@@ -21,10 +21,7 @@ namespace :import_csv do
             b = Bike.new
             b.identifier = row["identifier"]
             b.current_station_id = row["current_station_id"]
-            b.charge_level = row["charge_level"]
-            b.docked = row["docked"]
             b.save
-            puts "bike added. #{b.identifier} #{b.current_station_id} #{b.station_id}"
             puts "bike added. #{b.identifier}"
         end
     end
