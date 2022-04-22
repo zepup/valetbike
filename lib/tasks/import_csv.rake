@@ -20,9 +20,9 @@ namespace :import_csv do
         csv_bike.each do |row|
             b = Bike.new
             b.identifier = row["identifier"]
-            b.current_station_id = row["current_station_id"]
+            b.current_station_id = row[1]
             b.save
-            puts "bike added. #{b.identifier}"
+            puts "bike added. #{b.identifier} blah blah #{b.current_station_id}"
         end
     end
 end
