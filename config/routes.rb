@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :products
   post "checkout/create", to: "checkout#create"
   #root to: "stations#index"
-  
+
   get "about/about"
   get "about", to: "about#index"
 
@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   get "membership", to: "memberships#index"
   get "map", to: "map#index"
   get "register", to: "register#index"
+  get "stations", to: "stations#index"
 end
-
