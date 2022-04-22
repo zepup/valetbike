@@ -1,28 +1,20 @@
-<h1>Map</h1>
-
-<div class="flexbox vertical stretch">
-  <% if @stations.present? %>
-    <%= render(partial: "stations/row", collection: @stations, as: :station) %>
-  <% else %>
-  <div class="empty">
-    No stations found.
-  </div>
-  <% end %>
-</div>
-
+<h1>Station Map</h1>
   <div class="map-box">
     <%# Sets map div %>
     <div id="map"></div>
-
+    <%# Have to call js file with all leaflet functions after html div %>
+    <%= javascript_include_tag('leaflet.js') %>
 
     <script type="text/javascript">
 
       <% Station.all.each do |s| %>
-        var marker = L.marker([42.33, -72.63]).addTo(map);
-        <L.marker(<%= raw [s.latitude, s.longitude].to_json %>).addTo(map);
+        <% puts "The current array item is: #{s}" %>
+        // var marker = L.marker([42.33, -72.63]).addTo(map);
+        console.log(map)
+        // Adds the station markers to the map by using the lat and long in the database
+        var marker = L.marker(<%= raw [s.latitude, s.longitude]%>).addTo(map);
+        // Adds the popup for the marker with the station name, address, and dock number
+        marker.bindPopup("Station Name: " + <%= raw [s.name] %> + "<br>Address: " + <%= raw [s.address] %> + "<br>Total Docks: " + <%= raw [s.total_docks] %> + "<br>Available Bikes: ").openPopup();
       <% end %>
     </script>
-
-    <%# Have to call js file with all leaflet functions after html div %>
-    <%= javascript_include_tag('leaflet.js') %>
   </div>

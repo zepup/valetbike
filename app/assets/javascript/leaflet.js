@@ -16,7 +16,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //   }
 //
 
-var marker = L.marker([42.33, -72.64]).addTo(map);
+//var marker = L.marker([42.33, -72.64]).addTo(map);
 
 // // GET request
 // $.ajax({
