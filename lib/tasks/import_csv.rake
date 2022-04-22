@@ -22,7 +22,7 @@ namespace :import_csv do
             b.identifier = row["identifier"]
             b.current_station_id = row[1]
             b.save
-            puts "bike added. #{b.identifier} blah blah #{b.current_station_id}"
+            puts "bike added. #{b.identifier} #{b.current_station_id}"
         end
     end
 end
