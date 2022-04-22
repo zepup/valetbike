@@ -19,12 +19,26 @@
     <script type="text/javascript">
 
       <% Station.all.each do |s| %>
+        // Saves the station id as a variable
+        var stationId = <%= raw s.identifier %>
+        // Number to keep track of numbers af bikes
+        var bikeNum = 0;
+        // For loop to count how many bikes are at each station
+        <% Bike.all.each do |b| %>
+         var bikeStationId = <%= raw b.current_station_id %>
+           if (stationId == bikeStationId) {
+             bikeNum++;
+           }
+      <% end %>
+
+
+
         <% puts "The current array item is: #{s}" %>
         // var marker = L.marker([42.33, -72.63]).addTo(map);
         // Adds the station markers to the map by using the lat and long in the database
         var marker = L.marker(<%= raw [s.latitude, s.longitude]%>).addTo(myMap);
         // Adds the popup for the marker with the station name, address, and dock number
-        marker.bindPopup("Station Name: " + <%= raw [s.name] %> + "<br>Address: " + <%= raw [s.address] %> + "<br>Total Docks: " + <%= raw [s.total_docks] %> + "<br>Available Bikes: ").openPopup();
+        marker.bindPopup("Station Name: " + <%= raw [s.name] %> + "<br>Address: " + <%= raw [s.address] %> + "<br>Total Docks: " + <%= raw [s.total_docks] %> + "<br>Available Bikes: "  + bikeNum).openPopup();
       <% end %>
     </script>
   </div>
