@@ -28,12 +28,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+  .column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
     <!--for flash messages-->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
      <%= render "about/header" %>
     <div class = "container">
-      <br/>
+
     <%= yield %>
     </div>
 
@@ -51,7 +55,6 @@
     -->
   </body>
 </html>
-
 
 
 
