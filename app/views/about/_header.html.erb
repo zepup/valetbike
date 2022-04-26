@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;">
 <%= image_tag("quad-favicon.jpg", :alt => "bike logo", :class => "navbar-img") %>
 <%= link_to 'Quadricycle', root_path, class:"navbar-brand" %>
 
@@ -14,13 +16,13 @@
     </li>
       <li class="nav-item">
          <%= link_to "About Us",about_about_path, class:"nav-link"%>
-      
+
       </li>
     </li>
 
       <li class="nav-item">
          <%= link_to "Map",map_path, class:"nav-link"%>
-      
+
       </li>
 
 
@@ -29,19 +31,19 @@
    </li>
       <li class="nav-item">
          <%= link_to "Sign out",destroy_user_session_path, method: :delete, class:"nav-link"%>
-      
+
       </li>
 
        </li>
       <li class="nav-item">
          <%= link_to "Profile",edit_user_registration_path, class:"nav-link"%>
-      
+
      </li>
 
      </li>
       <li class="nav-item">
          <%= link_to "Membership",memberships_path, class:"nav-link"%>
-      
+
      </li>
 
 
@@ -50,18 +52,18 @@
        </li>
       <li class="nav-item">
          <%= link_to "Sign in",new_user_session_path,class:"nav-link"%>
-      
+
       </li>
 
        </li>
       <li class="nav-item">
          <%= link_to "Register",new_user_registration_path, class:"nav-link"%>
-      
+
       </li>
 
     <% end %>
 
-  
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -70,6 +72,3 @@
   </div>
 
 </nav>
-
-
-
