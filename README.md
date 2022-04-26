@@ -14,7 +14,7 @@ Rails 6.1.4
 * Configuration
 
 Install required gems by running ```bundle install```
-Run:
+Then run:
 
 ```
 rails webpacker:install
