@@ -1,25 +1,50 @@
 # README
 
 * Ruby version
+
+
 Ruby version 3.0.2
 
 * System dependencies
+
+
 MySQL8
 Rails 6.1.4
 
 * Configuration
-Install required gems by running bundle install
-Run rails webpacker:install
-Run rake assets:precompile
+
+Install required gems by running ```bundle install```
+Run:
+
+```
+rails webpacker:install
+
+rake assets:precompile
+```
+
 
 * Database creation and initialization
-Run rake db:create
-then run bin/rails db:migrate RAILS_ENV=development
+
+Run the following commands:
+```
+rake db:drop
+
+rake db:create
+
+rake db:migrate
+
+rake import_csv:data
+
+```
 
 * How to run the test suite
-In your terminal launch the web app with rails s then go to http://localhost:3000 in your browser
 
-* Description of MVP functionality
+
+In your terminal launch the web app with ```rails s```then go to http://localhost:3000 in your browser
+
+Description of MVP functionality:
+
+
 Navigation bar with links to About Us, Map, Login, Register, and Membership
 After signing in, the nav bar options are About Us, Map, Sign Out, Profile and Membership 
 
