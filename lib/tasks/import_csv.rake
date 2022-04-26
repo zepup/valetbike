@@ -24,6 +24,18 @@ namespace :import_csv do
             b.save
             puts "bike added. #{b.identifier} #{b.current_station_id}"
         end
+
+        csv_membership_text = File.read(Rails.root.join("notes", "membership-data.csv"))
+        csv_membership = CSV.parse(csv_membership_text, :headers => true, :encoding => "ISO-8859-1")
+
+        csv_membership.each do |row|
+            b = Membership.new
+            b.name = row["name"]
+            b.price = row["price"]
+            b.save
+            puts "membership added. #{b.name}"
+        end
+
     end
 end
 

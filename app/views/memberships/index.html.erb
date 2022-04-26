@@ -2,13 +2,17 @@
 
 <h1>Memberships</h1>
 
+<h6>Select your membership tier based on the plan that works for you</h6>
+
+  <img src ="https://www.northamptonma.gov/ImageRepository/Document?documentID=18288" style="width:805px;height:278px;">
+
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Price</th>
       <th>PAYMENT</th>
-      <th colspan="3"></th>
+      <th colspan="10"></th>
     </tr>
   </thead>
 
@@ -16,16 +20,12 @@
     <% @memberships.each do |membership| %>
       <tr>
         <td><%= membership.name %></td>
-        <td><%= membership.price %></td>
+        <td> $<%= membership.price / 100%> / month</td>
         <td><%= button_to "Buy now!", checkout_create_path, params: {id: membership.id}, remote: true %></td>
         <td><%= link_to 'Show', membership %></td>
-        <td><%= link_to 'Edit', edit_membership_path(membership) %></td>
-        <td><%= link_to 'Destroy', membership, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Membership', new_membership_path %>
