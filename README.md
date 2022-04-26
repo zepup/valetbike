@@ -48,7 +48,9 @@ Description of MVP functionality:
 Navigation bar with links to About Us, Map, Login, Register, and Membership
 After signing in, the nav bar options are About Us, Map, Sign Out, Profile and Membership 
 
-Registration functionality: create account with username and password, Email confirmation for user registration 
+Registration functionality: 
+
+create account with username and password, email confirmation for user registration 
 
 "forget password" option will send email to user's email address
 
