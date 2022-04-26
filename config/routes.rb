@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get "map", to: "map#index"
   get "register", to: "register#index"
   get "stations", to: "stations#index"
+  get "rent", to: "rent#index"
 end
