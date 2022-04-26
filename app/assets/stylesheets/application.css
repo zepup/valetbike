@@ -26,7 +26,9 @@
     align-items: center;
     justify-content: center;
 }
-
+.alert {
+   width:60%;    
+}
 #map {
   /*TODO: Try to center map in the middle of the page */
   flex: 1;
