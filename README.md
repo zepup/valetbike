@@ -37,7 +37,7 @@ rake import_csv:data
 
 ```
 
-* How to run the test suite
+<h3> How to run the test suite </h3>
 
 
 In your terminal launch the web app with ```rails s```then go to http://localhost:3000 in your browser
