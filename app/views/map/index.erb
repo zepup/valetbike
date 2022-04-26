@@ -40,7 +40,13 @@
         // Adds the station markers to the map by using the lat and long in the database
         var marker = L.marker(<%= raw [s.latitude, s.longitude]%>).addTo(myMap);
         // Adds the popup for the marker with the station name, address, and dock number
-        marker.bindPopup("Station Name: " + <%= raw [s.name] %> + "<br>Address: " + <%= raw [s.address] %> + "<br>Total Docks: " + <%= raw [s.total_docks] %> + "<br>Available Bikes: "  + bikeNum).openPopup();
+        <% if user_signed_in? %>
+          marker.bindPopup("Station Name: " + <%= raw [s.name] %> + "<br>Address: " + <%= raw [s.address] %> + "<br>Total Docks: " + <%= raw [s.total_docks] %> + "<br>Available Bikes: "  + bikeNum + "<br>Rent a Bike: <button type='button' class='btn smallBtn btn-outline-primary'><a class='smalltext' href='/rent'>Rent</a></button>").openPopup();
+        <% else %>
+          marker.bindPopup("Station Name: " + <%= raw [s.name] %> + "<br>Address: " + <%= raw [s.address] %> + "<br>Total Docks: " + <%= raw [s.total_docks] %> + "<br>Available Bikes: "  + bikeNum + "<br>Rent a Bike: <button type='button' class='btn smallBtn btn-outline-primary'><a class='smalltext' href='/rent'>Rent</a></button>").openPopup();
+
+        <% end %>
+
       <% end %>
     </script>
   </div>
