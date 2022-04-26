@@ -28,11 +28,28 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+
     <!--for flash messages-->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
      <%= render "about/header" %>
     <div class = "container">
+      <%if notice %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+ <p class="notice"><%= notice %></p>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+ </div>
+  <% end %>
+     <% if alert%>
+ <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <p class="alert"><%= alert %></p>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+   </div>
+  <% end %>
+
+
     <%= yield %>
     </div>
 
@@ -50,3 +67,11 @@
     -->
   </body>
 </html>
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> e21b07d02491bbbf222d9c527ad6e05bf3dc89e0
