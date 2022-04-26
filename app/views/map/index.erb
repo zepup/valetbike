@@ -43,7 +43,7 @@
         <% if user_signed_in? %>
           marker.bindPopup("Station Name: " + <%= raw [s.name] %> + "<br>Address: " + <%= raw [s.address] %> + "<br>Total Docks: " + <%= raw [s.total_docks] %> + "<br>Available Bikes: "  + bikeNum + "<br>Rent a Bike: <button type='button' class='btn smallBtn btn-outline-primary'><a class='smalltext' href='/rent'>Rent</a></button>").openPopup();
         <% else %>
-          marker.bindPopup("Station Name: " + <%= raw [s.name] %> + "<br>Address: " + <%= raw [s.address] %> + "<br>Total Docks: " + <%= raw [s.total_docks] %> + "<br>Available Bikes: "  + bikeNum).openPopup();
+          marker.bindPopup("Station Name: " + <%= raw [s.name] %> + "<br>Address: " + <%= raw [s.address] %> + "<br>Total Docks: " + <%= raw [s.total_docks] %> + "<br>Available Bikes: "  + bikeNum + "<br>Rent a Bike: <button type='button' class='btn smallBtn btn-outline-primary'><a class='smalltext' href='/rent'>Rent</a></button>").openPopup();
 
         <% end %>
 
