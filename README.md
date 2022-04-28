@@ -39,6 +39,7 @@ rake import_csv:data
 * Email API integration
 <body>
 If you wanna tryout our email confirmation function. 
+  
 You may contact us via smithquadricycle@gmail.com or discord Zepamo#3499 for the apikey. 
 
 Once you have the apikey, you can add it to the encvironment.rb file under config by changing the password to the actual key in the stmp setting. 
