@@ -36,25 +36,28 @@ rake db:migrate
 rake import_csv:data
 
 ```
-Email API integration
-*If you wanna tryout our email confirmation function. 
+* Email API integration
+<body>
+If you wanna tryout our email confirmation function. 
 
-*You may contact us via smithquadricycle@gmail.com or discord Zepamo#3499 for the apikey. 
+You may contact us via smithquadricycle@gmail.com or discord Zepamo#3499 for the apikey. 
 
-*Once you have the apikey, you can add it to the encvironment.rb file under config by changing the password to the actual key in the stmp setting. 
+Once you have the apikey, you can add it to the encvironment.rb file under config by changing the password to the actual key in the stmp setting. 
+  
+</body>
 
 <h3> How to run the test suite </h3>
 
 
 In your terminal launch the web app with ```rails s```then go to http://localhost:3000 in your browser
 
-Description of MVP functionality:
+<h4> Description of MVP functionality: </h4>
 
 
 Navigation bar with links to About Us, Map, Login, Register, and Membership
 After signing in, the nav bar options are About Us, Map, Sign Out, Profile and Membership 
 
-Registration functionality: 
+<h4> Registration functionality: </h4>
 
 create account with username and password, email confirmation for user registration 
 
@@ -64,7 +67,8 @@ After log in, user can edit their profile or delete their account.
 
 Membership payment functionality: Users can select one of three membership tiers and click "Buy Now!" to be redirected to Stripe checkout
 
-Map functionality: Displays "Nipmuck Notch" (Northampton) with panning and zooming in/out
+<h4> Map functionality: </h4>
+Displays "Nipmuck Notch" (Northampton) with panning and zooming in/out 
 
 Displays marker at station location with name, address, available docks and available bikes
 
